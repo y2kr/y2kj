@@ -42,7 +42,17 @@ body {
   max-width: 100%;
 }
 
-.glow-image, .horizontal-image {
+#terrain-container {
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+  overflow: hidden;
+}
+
+.glow-image,
+.horizontal-image {
   display: block;
   margin: 20px auto;
   padding: 5px;
@@ -54,8 +64,13 @@ body {
 }
 
 @keyframes mainImageGlow {
-  0%, 100% { box-shadow: 0 0 40px var(--accent-color); }
-  50% { box-shadow: 0 0 60px var(--accent-color); }
+  0%,
+  100% {
+    box-shadow: 0 0 40px var(--accent-color);
+  }
+  50% {
+    box-shadow: 0 0 60px var(--accent-color);
+  }
 }
 
 .footer {
@@ -76,8 +91,13 @@ body {
 }
 
 @keyframes bumperGlow {
-  0%, 100% { box-shadow: 0 0 20px var(--accent-color); }
-  50% { box-shadow: 0 0 30px var(--accent-color); }
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--accent-color);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--accent-color);
+  }
 }
 
 .pagination-links {
@@ -96,7 +116,9 @@ body {
   color: var(--accent-color);
   text-decoration: none;
   margin: 0 10px;
-  transition: color 0.3s, text-decoration 0.3s;
+  transition:
+    color 0.3s,
+    text-decoration 0.3s;
 }
 
 .pagination-links a:hover,
@@ -116,8 +138,9 @@ body {
   margin: 20px 0;
 }
 
-.bulletin, .bulletin2 {
-  font-family: "Times New Roman", Times, serif;
+.bulletin,
+.bulletin2 {
+  font-family: 'Times New Roman', Times, serif;
   color: var(--accent-color);
   width: 80%;
   max-width: 800px;
