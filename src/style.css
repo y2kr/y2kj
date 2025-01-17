@@ -17,6 +17,27 @@ body {
   cursor: url(https://cur.cursors-4u.net/mechanics/mec-3/mec300.cur), auto !important;
 }
 
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;  /* Start invisible */
+  transition: opacity 0.3s ease;  /* Smooth fade in */
+}
+
+.star.visible {
+  opacity: 0.3;  /* Base opacity */
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.star.animate {
+  animation: twinkle var(--duration) infinite var(--delay);
+}
+
 header {
   width: 100%;
   display: flex;
@@ -52,6 +73,9 @@ header {
 }
 
 #geo-container {
+  position: relative;
+  z-index: 1;
+  background-color: var(--main-bg-color);
   width: 420px;
   height: 420px;
   margin: 10px auto;
