@@ -3884,4 +3884,4 @@ void main() {
                 gl_FragColor = vec4(finalColor, 1.0);
             }
         `}),a=new Ys(1,1);ii=new ke(a,s),Rn.add(ii),Dn=new vp({antialias:!0}),Dn.setPixelRatio(window.devicePixelRatio),Dn.setSize(t,e),i.appendChild(Dn.domElement);const o=new Mp(li,Dn.domElement);o.minDistance=2,o.maxDistance=10,o.enableDamping=!0,o.dampingFactor=.05,window.addEventListener("resize",Ip)}function Ip(){const i=document.getElementById("terrain-container"),t=i.clientWidth,e=i.clientHeight;li.aspect=t/e,li.updateProjectionMatrix(),Dn.setSize(t,e)}function Ho(){requestAnimationFrame(Ho),ii&&(ii.rotation.x+=.002,ii.rotation.y+=.003,ii.material.uniforms.time.value+=.01),Dn.render(Rn,li)}Up();Ho();
-//# sourceMappingURL=index-BiPYPM9t.js.map
+//# sourceMappingURL=index-DS71TdwK.js.map
