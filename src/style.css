@@ -11,8 +11,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
+  width: 100%;
   cursor: url(https://cur.cursors-4u.net/mechanics/mec-5/mec474.cur), auto !important;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content {
@@ -37,17 +46,17 @@ body {
   white-space: pre-wrap;
   overflow-x: auto;
   color: var(--accent-color);
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto;
   max-width: 100%;
+  padding: 10px 0;
 }
 
-#terrain-container {
-  width: 400px;
-  height: 400px;
-  margin: 20px auto;
-  border: 2px solid #00ff00;
-  box-shadow: 0 0 10px #00ff00;
+#geo-container {
+  width: 420px;
+  height: 420px;
+  margin: 10px auto;
+  border: 1px solid #bebebe;
+  box-shadow: 0 0 20px #5d5d5d;
   overflow: hidden;
 }
 
@@ -136,20 +145,22 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 20px 0;
-}
-
-.bulletin,
-.bulletin2 {
-  font-family: 'Times New Roman', Times, serif;
-  color: var(--accent-color);
-  width: 80%;
+  width: 100%;
   max-width: 800px;
-  text-align: center;
-  margin: 10px 0;
 }
 
+.bulletin2 {
+  font-size: 18px;
+  text-align: center;
+}
+
+.bulletin2 a {
+  display: inline-block;
+  text-decoration: none;
+}
 .bulletin {
   font-size: 24px;
+  white-space: nowrap;
 }
 
 .bulletin2 {
