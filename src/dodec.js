@@ -15,7 +15,6 @@ function init() {
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0x000000);
 
-  // Lights
   const light1 = new THREE.PointLight(0xff2200, 100);
   light1.position.set(10, 10, 10);
   scene.add(light1);
@@ -26,14 +25,13 @@ function init() {
 
   scene.add(new THREE.AmbientLight(0x111111));
 
-  // Create custom shader material
   const customMaterial = new THREE.ShaderMaterial({
     wireframe: true,
     uniforms: {
       light1Pos: { value: light1.position },
       light2Pos: { value: light2.position },
-      color1: { value: new THREE.Color(0x7a1ca8) }, // Dark purple
-      color2: { value: new THREE.Color(0x942ea8) }, // Light purple
+      color1: { value: new THREE.Color(0x7a1ca8) },
+      color2: { value: new THREE.Color(0x942ea8) },
       time: { value: 0.0 },
     },
     vertexShader: `
@@ -137,7 +135,6 @@ function animate() {
     dodecahedron.rotation.x += 0.002;
     dodecahedron.rotation.y += 0.003;
 
-    // Update the time uniform for animation
     dodecahedron.material.uniforms.time.value += 0.01;
   }
 
