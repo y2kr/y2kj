@@ -1,8 +1,8 @@
 export default {
-    base: '/',
-    build: {
-      outDir: 'dist',
-      assetsDir: 'assets',
-      sourcemap: true
-    }
-  }
+  base: '/y2krdemo/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true,
+  },
+};
