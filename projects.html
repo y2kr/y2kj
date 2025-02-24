@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>t-2</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" style="text-decoration: none; color: inherit">
+        <div id="ascii-art2" align="center">
+          <pre>
+    
+  
+      ▄█  ▄██████▄     ▄████████         ▄█    █▄     ▄██████▄   ▄█         ▄▄▄▄███▄▄▄▄      ▄████████ ███▄▄▄▄   
+      ███ ███    ███   ███    ███        ███    ███   ███    ███ ███       ▄██▀▀▀███▀▀▀██▄   ███    ███ ███▀▀▀██▄ 
+      ███ ███    ███   ███    █▀         ███    ███   ███    ███ ███       ███   ███   ███   ███    ███ ███   ███ 
+      ███ ███    ███  ▄███▄▄▄           ▄███▄▄▄▄███▄▄ ███    ███ ███       ███   ███   ███   ███    ███ ███   ███ 
+      ███ ███    ███ ▀▀███▀▀▀          ▀▀███▀▀▀▀███▀  ███    ███ ███       ███   ███   ███ ▀███████████ ███   ███ 
+      ███ ███    ███   ███    █▄         ███    ███   ███    ███ ███       ███   ███   ███   ███    ███ ███   ███ 
+      ███ ███    ███   ███    ███        ███    ███   ███    ███ ███▌    ▄ ███   ███   ███   ███    ███ ███   ███ 
+  █▄ ▄███  ▀██████▀    ██████████        ███    █▀     ▀██████▀  █████▄▄██  ▀█   ███   █▀    ███    █▀   ▀█   █▀  
+  ▀▀▀▀▀▀                                                         ▀                                                
+  
+            </pre
+          >
+        </div>
+      </a>
+    </header>
+
+    <script type="module" src="/src/main.js"></script>
+
+      <!-- <div class="bulletin2">
+        <div class="subtitle">Projects</div> -->
+
+        <!-- Project 1 -->
+        <div class="project">
+          <h2 class="project-title">Content Based Image Retrival System</h2>
+          <div class="gallery">
+            <img
+              src="/imgs/projects/cbir/cbir1.jpg"
+              alt="Project 1 Image 1"
+              class="gallery-image"
+            />
+            <img
+              src="/imgs/projects/cbir/cbir2.jpg"
+              alt="Project 1 Image 2"
+              class="gallery-image"
+            />
+            <img
+              src="/imgs/projects/cbir/cbir3.jpg"
+              alt="Project 1 Image 3"
+              class="gallery-image"
+            />
+            <img
+              src="/imgs/projects/cbir/cbir4.jpg"
+              alt="Project 1 Image 4"
+              class="gallery-image"
+            />
+          </div>
+          <div class="project-description">
+            <p>This Content-Based Image Retrieval (CBIR) system was developed to explore different techniques for finding similar images based on their visual content rather than metadata. The system implements three different models for image retrieval, each exploring different feature extraction techniques and methodologies.</p>
+            
+            <p>The first model utilizes a combination of HSV Histograms, Dominant Colours, Gabor Features, and Haralick Features for image analysis. Each feature vector is processed using Euclidean distance calculations to identify similarities between images. The second model builds on this foundation with improved feature extraction methods, including HSV Histograms, Gabor Features, Haralick Features, and HoG Features, originally adapted from a Bag of Words (BoW) approach.</p>
+            
+            <p>The third and most advanced model leverages the VGG-16 deep learning architecture for feature extraction, demonstrating significantly improved retrieval accuracy over the traditional computer vision approaches. The interface was built using PySimpleGUI, allowing for intuitive selection of models, query images, and parameter adjustments.</p>
+            
+            <p>This project expanded on concepts explored in my dissertation, particularly focusing on optimization of feature extraction techniques and the integration of deep learning methods for content-based image retrieval.</p>
+            
+            <p><a href="https://github.com/y2kr/CBIRS" target="_blank">View project on GitHub</a></p>
+          </div>
+        </div>
+
+        <!-- Project 2 (with no images) -->
+        <div class="project">
+          <h2 class="project-title">Project Name 2</h2>
+          <div class="project-description">
+            <p>
+              This is an example of a project without any images. The
+              description takes up the full width and can be as detailed as
+              necessary to explain your work.
+            </p>
+            <p>
+              You could include information about the technologies used, your
+              approach to solving problems, and the impact of your solution.
+              Even without visual elements, you can effectively communicate the
+              significance of your project.
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project">
+          <h2 class="project-title">Project Name 3</h2>
+          <div class="gallery">
+            <img
+              src="/path/to/project3-image1.jpg"
+              alt="Project 3 Image 1"
+              class="gallery-image"
+            />
+            <img
+              src="/path/to/project3-image2.jpg"
+              alt="Project 3 Image 2"
+              class="gallery-image"
+            />
+            <img
+              src="/path/to/project3-image3.jpg"
+              alt="Project 3 Image 3"
+              class="gallery-image"
+            />
+          </div>
+          <div class="project-description">
+            <p>
+              Description of Project 3. This could be a brief overview or a more
+              detailed explanation depending on the complexity and significance
+              of the project.
+            </p>
+          </div>
+        </div>
+
+        <!-- Back to home link -->
+        <br />
+        <a href="index.html">> Back to Home</a>
+      </div>
+    </div>
+
+    <!-- Modal for displaying full-size images -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg" />
+      </div>
+
+    <script src="/src/modal.js"></script>
+
+    <script src="/src/stars.js"></script>
+  </body>
+</html>
