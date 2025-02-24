@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/y2krdemo/', // Set the base path to match your GitHub Pages subdirectory
+  base: '/y2krdemo/',
   build: {
     rollupOptions: {
       input: {
