@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/y2krdemo/',
+  base: '/y2kj/',
   build: {
     rollupOptions: {
       input: {
