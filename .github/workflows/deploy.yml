@@ -24,8 +24,54 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Update Vite config if needed
+        run: |
+          if [ -f "vite.config.js" ]; then
+            # Check if base path is set correctly
+            if ! grep -q "base: '/y2krdemo/'" vite.config.js; then
+              echo "Warning: base path might not be set correctly in vite.config.js"
+              echo "You may need to update it to include: base: '/y2krdemo/'"
+            else
+              echo "Vite config looks good!"
+            fi
+          fi
+
       - name: Build
         run: npm run build
+
+      - name: Prepare files for deployment
+        run: |
+          echo "Preparing files for deployment..."
+
+          # Copy HTML files to dist
+          cp -f index.html dist/ 2>/dev/null || echo "Note: index.html not found or already in dist"
+          cp -f projects.html dist/ 2>/dev/null || echo "Note: projects.html not found or already in dist"
+          cp -f photos.html dist/ 2>/dev/null || echo "Note: photos.html not found or already in dist"
+
+          # Create src directory in dist and copy JS/CSS files
+          mkdir -p dist/src
+          cp -f src/*.js dist/src/ 2>/dev/null || echo "Note: No JS files found or already in dist"
+          cp -f src/*.css dist/src/ 2>/dev/null || echo "Note: No CSS files found or already in dist"
+
+          # Copy images directory
+          if [ -d "imgs" ]; then
+            mkdir -p dist/imgs
+            cp -r imgs/* dist/imgs/ 2>/dev/null || echo "Note: No images found or already in dist"
+          fi
+
+          # Create .nojekyll file (prevents GitHub Pages from using Jekyll)
+          touch dist/.nojekyll
+
+          echo "Files prepared successfully!"
+
+      - name: List files in dist
+        run: |
+          echo "Contents of dist directory:"
+          ls -la dist/
+          echo "Contents of dist/src directory:"
+          ls -la dist/src/ || echo "dist/src directory not found"
+          echo "Contents of dist/imgs directory:"
+          ls -la dist/imgs/ || echo "dist/imgs directory not found"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
