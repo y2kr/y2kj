@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,25 +6,14 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <title>t-2</title>
-
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
-          "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
-        }
-      }
-    </script>
-    <script type="module" crossorigin src="/y2krdemo/assets/main-3D1FuPcC.js"></script>
-    <link rel="stylesheet" crossorigin href="/y2krdemo/assets/main-Dt9s1ZEh.css">
+    <title>Photos - Joe Holman</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <div id="ascii-art2" align="center">
-        <pre>
-  
-
+      <a href="index.html" style="text-decoration: none; color: inherit">
+        <div id="ascii-art2" align="center">
+          <pre>
     ▄█  ▄██████▄     ▄████████         ▄█    █▄     ▄██████▄   ▄█         ▄▄▄▄███▄▄▄▄      ▄████████ ███▄▄▄▄   
     ███ ███    ███   ███    ███        ███    ███   ███    ███ ███       ▄██▀▀▀███▀▀▀██▄   ███    ███ ███▀▀▀██▄ 
     ███ ███    ███   ███    █▀         ███    ███   ███    ███ ███       ███   ███   ███   ███    ███ ███   ███ 
@@ -35,33 +24,61 @@
 █▄ ▄███  ▀██████▀    ██████████        ███    █▀     ▀██████▀  █████▄▄██  ▀█   ███   █▀    ███    █▀   ▀█   █▀  
 ▀▀▀▀▀▀                                                         ▀                                                
 
-            </pre
-        >
-      </div>
+        </pre
+          >
+        </div>
+      </a>
     </header>
-    <!-- Updated script path -->
-    <div id="geo-container"></div>
-    <div class="parent-container">
-      <div class="bulletin" align="center">
-        <p>
-          ***** ***** ***** *****<br />
-          {Joe Holman}<br />
-          17 JANUARY 2025
-          
-        </p>
-      </div>
-      <div class="bulletin2">
-        <i>֍ Full-stack devolper, ML, GenAI</i>
-        <br><br><b>Contact:</b><br>
-        josepholman2k@gmail.com <br>
 
-        <br> <br><a href="./projects.html"> > Projects</a><br>
-        <a href="./photos.html" target="_blank">> Photos 2016>>Ongoing</a><br>
-        <i> </a><br>
-        
-      </div>
+    <div class="gallery">
+      <img src="photos/page1/photo1.jpg" alt="Photo 1" class="gallery-image" />
+      <img src="photos/page1/photo2.jpg" alt="Photo 2" class="gallery-image" />
+      <img src="photos/page1/photo3.jpg" alt="Photo 3" class="gallery-image" />
+      <!-- Add more images as needed -->
     </div>
-    <!-- Updated script path -->
-    <script src="./src/stars.js"></script>
+
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01" />
+      <div id="caption"></div>
+    </div>
+
+    <div class="pagination-links">
+      <a href="photos.html">« </a>
+      <a href="photos.html">1 </a>| <a href="photos2.html">2</a> |
+      <a href="photos3.html">3</a> | <a href="photos4.html">4</a> |
+      <a href="photos5.html">5</a> | <a href="photos6.html">6</a> |
+      <a href="photos7.html">7</a> | <a href="photos8.html">8</a> |
+      <a href="photos9.html">9</a>
+      <a href="photos2.html"> »</a>
+    </div>
+
+    <script src="/src/stars.js"></script>
+    <script>
+      // Modal functionality
+      const modal = document.getElementById('myModal');
+      const modalImg = document.getElementById('img01');
+      const captionText = document.getElementById('caption');
+      const images = document.getElementsByClassName('gallery-image');
+      const span = document.getElementsByClassName('close')[0];
+
+      Array.from(images).forEach((img) => {
+        img.onclick = function () {
+          modal.style.display = 'flex';
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+        };
+      });
+
+      span.onclick = function () {
+        modal.style.display = 'none';
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+    </script>
   </body>
 </html>
