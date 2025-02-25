@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,8 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <link rel="icon" type="image/png" href="../files/imgs/icon.png">
-    <title>JH</title>
+    <link rel="icon" type="image/png" href="../files/imgs/icon.png" />
+    <title>JH - Projects</title>
     <link rel="stylesheet" href="../src/style.css" />
     <script type="importmap">
       {
@@ -43,68 +43,101 @@
 
     <script type="module" src="../src/main.js"></script>
 
-      <!-- <div class="bulletin2">
-        <div class="subtitle">Projects</div> -->
-        <div class="project">
-          <h2 class="project-title">Content-Based Image Retrival System</h2>
-          <div class="gallery">
-            <img
-              src="../files/imgs/cbir/cbir1.jpg"
-              alt="Project 1 Image 1"
-              class="gallery-image"
-            />
-            <img
-              src="../files/imgs/cbir/cbir2.jpg"
-              alt="Project 1 Image 2"
-              class="gallery-image"
-            />
-            <img
-              src="../files/imgs/cbir/cbir3.jpg"
-              alt="Project 1 Image 3"
-              class="gallery-image"
-            />
-            <img
-              src="../files/imgs/cbir/cbir4.jpg"
-              alt="Project 1 Image 4"
-              class="gallery-image"
-            />
-            <img
+    <div class="content-container">
+      <div class="project">
+        <h2 class="project-title">Content-Based Image Retrival System</h2>
+        <div class="gallery">
+          <img
+            src="../files/imgs/cbir/cbir1.jpg"
+            alt="Project 1 Image 1"
+            class="gallery-image"
+          />
+          <img
+            src="../files/imgs/cbir/cbir2.jpg"
+            alt="Project 1 Image 2"
+            class="gallery-image"
+          />
+          <img
+            src="../files/imgs/cbir/cbir3.jpg"
+            alt="Project 1 Image 3"
+            class="gallery-image"
+          />
+          <img
+            src="../files/imgs/cbir/cbir4.jpg"
+            alt="Project 1 Image 4"
+            class="gallery-image"
+          />
+          <img
             src="../files/imgs/cbir/M3_run1.png"
             alt="Project 1 Image 5"
             class="gallery-image"
           />
           <img
-          src="../files/imgs/cbir/M3_run1.png"
-          alt="Project 1 Image 6"
-          class="gallery-image"
-        />
-          </div>
-          <div class="project-description">
-            <p>This Content-Based Image Retrieval (CBIR) system was devolped to explore and compare different techniques for finding similiar images based on their visual content. The system implements three different models for image retrival, each exploring different feature extraction techniques and methodologies.</p>
-            
-            <p>The first and most simple model uses a combination of HSV Histograms, Dominant Colours, Gabor Features, and Haralick Features for image analysis. Each feature vector is processed using Euclidean distance calculations to identify similarities between images.</p>
-                  
-            <p> The second model builds on this foundation with improved feature extraction methods, including HSV Histograms, Gabor Features, Haralick Features, and HoG Features. This model has been adapted from a Bag of Words approach using a linear support vector machine to learn images classes.</p>
-            
-            <p>The third model uses the VGG-16 deep learning architecture for feature extraction, demonstrating improved retrieval accuracy over the traditional computer vision approaches. </p>
-                
-            <p>The interface was built using PySimpleGUI, allowing for intuitive selection of models, query images, and parameter adjustments. This project expanded on concepts explored in my dissertation.</p>
-            
-            <p><a href="https://github.com/y2kr/CBIRS" target="_blank">View project on GitHub</a></p>
-
-            <a href="../files/other/dissertation_final_redacted.pdf" target="_blank" class="pdf-link">Read full dissertation here</a>
-          </div>
+            src="../files/imgs/cbir/M3_run1.png"
+            alt="Project 1 Image 6"
+            class="gallery-image"
+          />
         </div>
+        <div class="project-description">
+          <p>
+            This Content-Based Image Retrieval (CBIR) system was devolped to
+            explore and compare different techniques for finding similiar images
+            based on their visual content. The system implements three different
+            models for image retrival, each exploring different feature
+            extraction techniques and methodologies.
+          </p>
 
-        <br />
-        <a href="../">> Back to Home (you can click name at top)</a><br><br>
+          <p>
+            The first and most simple model uses a combination of HSV
+            Histograms, Dominant Colours, Gabor Features, and Haralick Features
+            for image analysis. Each feature vector is processed using Euclidean
+            distance calculations to identify similarities between images.
+          </p>
+
+          <p>
+            The second model builds on this foundation with improved feature
+            extraction methods, including HSV Histograms, Gabor Features,
+            Haralick Features, and HoG Features. This model has been adapted
+            from a Bag of Words approach using a linear support vector machine
+            to learn images classes.
+          </p>
+
+          <p>
+            The third model uses the VGG-16 deep learning architecture for
+            feature extraction, demonstrating improved retrieval accuracy over
+            the traditional computer vision approaches.
+          </p>
+
+          <p>
+            The interface was built using PySimpleGUI, allowing for intuitive
+            selection of models, query images, and parameter adjustments. This
+            project expanded on concepts explored in my dissertation.
+          </p>
+
+          <p>
+            <a href="https://github.com/y2kr/CBIRS" target="_blank"
+              >View project on GitHub</a
+            >
+          </p>
+
+          <a
+            href="../files/other/dissertation_final_redacted.pdf"
+            target="_blank"
+            class="pdf-link"
+            >Read full dissertation here</a
+          >
+        </div>
+      </div>
+
+      <div class="back-link">
+        <a href="../">> Back to Home</a>
       </div>
     </div>
 
     <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImg" />
-      </div>
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg" />
+    </div>
 
     <script src="../src/modal.js"></script>
     <script src="../src/stars.js"></script>
