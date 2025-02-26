@@ -349,13 +349,15 @@ header {
 @media only screen and (max-width: 768px) {
   body {
     font-size: 16px;
+    line-height: 1.5;
   }
 
   #ascii-art2 {
     font-size: 7px;
-    transform: scale(0.8);
+    transform: scale(0.75);
     margin-bottom: -15px;
     overflow-x: hidden;
+    margin: 15px auto;
   }
 
   #ascii-art2 pre {
@@ -373,7 +375,7 @@ header {
     width: 80%;
     height: auto;
     aspect-ratio: 1;
-    margin: 10px auto;
+    margin: 15px auto;
   }
 
   .gallery {
@@ -396,26 +398,19 @@ header {
   }
 
   .content-center {
-    text-align: center;
-    width: 100%;
-    margin: 20px 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .stars {
+    font-size: 20px;
+    margin-bottom: 20px;
   }
 
   .info-text {
-    display: inline-block;
-    text-align: left;
-    font-size: 18px;
-    margin: 0 auto;
-    line-height: 1.3;
+    max-width: 90%;
   }
-
   .project-title {
     font-size: 22px;
-  }
-
-  .stars {
-    font-size: 20px;
-    margin: 15px 0;
   }
 
   .project {
@@ -423,16 +418,15 @@ header {
   }
 
   .nav-link {
-    margin: 5px 0;
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 450px) and (max-width: 768px) {
   #geo-container {
-    width: 50% !important;
-    height: auto !important;
-    aspect-ratio: 1 !important;
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
