@@ -29,7 +29,7 @@ body {
   background-color: white;
   border-radius: 50%;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
 }
 
 .star.visible {
@@ -39,7 +39,7 @@ body {
 @keyframes twinkle {
   0%,
   100% {
-    opacity: 0.2;
+    opacity: 0.3;
   }
   50% {
     opacity: 1;
@@ -84,6 +84,8 @@ header {
   margin: 0 auto;
   max-width: 100%;
   padding: 10px 0;
+  line-height: 1.2;
+  transform-origin: top center;
 }
 
 #geo-container {
@@ -342,6 +344,11 @@ header {
     width: 250px;
     height: 250px;
   }
+
+  #ascii-art2 {
+    font-size: 10px;
+    transform: scale(0.9);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -363,6 +370,12 @@ header {
 
   #ascii-art2 {
     font-size: 8px;
+    transform: scale(0.8);
+    margin-bottom: -10px; /* Compensate for empty space after scaling */
+  }
+
+  header {
+    margin-bottom: 0;
   }
 
   #ascii-art2 pre {
@@ -411,7 +424,13 @@ header {
   }
 
   #ascii-art2 {
-    font-size: 6px;
+    font-size: 5px;
+    transform: scale(0.7);
+    margin-bottom: -20px;
+  }
+
+  #ascii-art2 pre {
+    margin: 0;
   }
 
   .project-title {
@@ -449,7 +468,9 @@ header {
   }
 
   #ascii-art2 {
-    font-size: 4px;
+    font-size: 3px;
+    transform: scale(0.6);
+    margin-bottom: -25px;
   }
 
   .stars {
