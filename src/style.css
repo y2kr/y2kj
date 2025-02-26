@@ -90,32 +90,23 @@ header {
 #ascii-art2 {
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
   white-space: pre;
   overflow-x: hidden;
   color: var(--accent-color);
   margin: 0 auto;
-  padding: 10px 0;
-  width: 100%;
   max-width: 100%;
+  padding: 10px 0;
   line-height: 1;
-  display: flex;
-  justify-content: center;
-}
-
-#ascii-art2 pre {
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  display: inline-block;
-  width: auto;
+  transform-origin: top center;
 }
 
 #geo-container {
   position: relative;
   z-index: 1;
   background-color: var(--main-bg-color);
-  width: 420px;
-  height: 420px;
+  width: 370px;
+  height: 370px;
   margin: 10px auto;
   border: 1px solid #bebebe;
   box-shadow: 0 0 20px #5d5d5d;
@@ -218,7 +209,7 @@ header {
 .info-text {
   display: inline-block;
   text-align: left;
-  font-size: 20px;
+  font-size: 18px;
   margin: 0 auto;
   line-height: 1.4;
 }
@@ -288,7 +279,7 @@ header {
   margin: 25px 0;
   text-align: left;
   max-width: 1200px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .project-description p {
@@ -402,8 +393,17 @@ header {
     line-height: 1.5;
   }
 
+  #ascii-art2 {
+    font-size: 7px;
+    transform: scale(0.75);
+    margin-bottom: -15px;
+    overflow-x: hidden;
+    margin: 15px auto;
+  }
+
   #ascii-art2 pre {
-    font-size: 8px;
+    margin: 0;
+    padding: 0;
   }
 
   .content-container {
@@ -433,7 +433,7 @@ header {
 
   .project-description,
   .nav-link {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
   }
 
@@ -448,7 +448,7 @@ header {
   }
 
   .info-text {
-    font-size: 18px;
+    font-size: 15px;
     max-width: 90%;
   }
 
@@ -481,10 +481,6 @@ header {
     height: 280px;
   }
 
-  #ascii-art2 pre {
-    font-size: 6px;
-  }
-
   .gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
@@ -495,13 +491,14 @@ header {
   }
 
   .project-title {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 
 @media only screen and (max-width: 320px) {
-  #ascii-art2 pre {
+  #ascii-art2 {
     font-size: 4px;
+    transform: scale(0.6);
   }
 
   #geo-container {
