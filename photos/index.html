@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link rel="icon" type="image/png" href="../files/imgs/icon.png" />
+    <title>JH - Photos</title>
+    <link rel="stylesheet" href="../src/style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <a href="../" style="text-decoration: none; color: inherit">
+        <div id="ascii-art2" align="center">
+          <pre>
+    
+  
+      ▄█  ▄██████▄     ▄████████         ▄█    █▄     ▄██████▄   ▄█         ▄▄▄▄███▄▄▄▄      ▄████████ ███▄▄▄▄   
+      ███ ███    ███   ███    ███        ███    ███   ███    ███ ███       ▄██▀▀▀███▀▀▀██▄   ███    ███ ███▀▀▀██▄ 
+      ███ ███    ███   ███    █▀         ███    ███   ███    ███ ███       ███   ███   ███   ███    ███ ███   ███ 
+      ███ ███    ███  ▄███▄▄▄           ▄███▄▄▄▄███▄▄ ███    ███ ███       ███   ███   ███   ███    ███ ███   ███ 
+      ███ ███    ███ ▀▀███▀▀▀          ▀▀███▀▀▀▀███▀  ███    ███ ███       ███   ███   ███ ▀███████████ ███   ███ 
+      ███ ███    ███   ███    █▄         ███    ███   ███    ███ ███       ███   ███   ███   ███    ███ ███   ███ 
+      ███ ███    ███   ███    ███        ███    ███   ███    ███ ███▌    ▄ ███   ███   ███   ███    ███ ███   ███ 
+  █▄ ▄███  ▀██████▀    ██████████        ███    █▀     ▀██████▀  █████▄▄██  ▀█   ███   █▀    ███    █▀   ▀█   █▀  
+  ▀▀▀▀▀▀                                                         ▀                                                
+  
+            </pre
+          >
+        </div>
+      </a>
+    </header>
+
+    <script type="module" src="../src/main.js"></script>
+
+    <div class="gallery"></div>
+
+    <br />
+    <a href="../">> Back to Home</a><br /><br />
+
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg" />
+    </div>
+
+    <script src="../src/modal.js"></script>
+    <script src="../src/stars.js"></script>
+  </body>
+</html>

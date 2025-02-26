@@ -27,6 +27,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Prepare for deployment (copy all project files)
+        run: |
+          # Simple approach: copy EVERYTHING to dist except node_modules and dist itself
+          find . -type f -not -path "./node_modules/*" -not -path "./dist/*" -not -path "./.git/*" -exec cp --parents {} dist/ \;
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
