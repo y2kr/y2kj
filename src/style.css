@@ -99,6 +99,21 @@ header {
   padding: 10px 0;
   line-height: 1;
   transform-origin: top center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ascii-art2 pre {
+  display: inline-block;
+  text-align: center;
+  white-space: pre;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 #geo-container {
@@ -394,16 +409,17 @@ header {
   }
 
   #ascii-art2 {
-    font-size: 7px;
-    transform: scale(0.75);
-    margin-bottom: -15px;
-    overflow-x: hidden;
+    font-size: 6px;
+    transform: none;
     margin: 15px auto;
+    overflow-x: hidden;
   }
 
   #ascii-art2 pre {
-    margin: 0;
-    padding: 0;
+    max-width: 100vw;
+    overflow-x: auto;
+    white-space: pre;
+    font-size: inherit;
   }
 
   .content-container {
@@ -481,6 +497,10 @@ header {
     height: 280px;
   }
 
+  #ascii-art2 {
+    font-size: 4px;
+  }
+
   .gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
@@ -497,8 +517,7 @@ header {
 
 @media only screen and (max-width: 320px) {
   #ascii-art2 {
-    font-size: 4px;
-    transform: scale(0.6);
+    font-size: 3px;
   }
 
   #geo-container {
