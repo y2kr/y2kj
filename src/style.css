@@ -90,30 +90,27 @@ header {
 #ascii-art2 {
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 11px;
-  white-space: pre;
-  overflow-x: hidden;
-  color: var(--accent-color);
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 10px 0;
-  line-height: 1;
-  transform-origin: top center;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+  overflow: hidden;
 }
 
 #ascii-art2 pre {
+  white-space: pre;
+  font-family: 'Courier New', Courier, monospace;
   display: inline-block;
   text-align: center;
-  white-space: pre;
-  font-size: inherit;
-  line-height: inherit;
   margin: 0;
   padding: 0;
   max-width: 100%;
-  overflow-x: auto;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
 }
 
 #geo-container {
