@@ -1,0 +1,310 @@
+:root {
+  color-scheme: dark;
+  --background: #000;
+  --foreground: #f4f4f2;
+  --muted: #aaa;
+  --line: #353535;
+  --cursor: url("https://cur.cursors-4u.net/mechanics/mec-3/mec300.cur");
+  font-family: "Courier New", Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 2rem;
+  color: var(--foreground);
+  background: transparent;
+  font-size: 1rem;
+  line-height: 1.6;
+  cursor: var(--cursor), auto;
+}
+
+.star-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.star-background i {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: white;
+  opacity: 0.25;
+  animation: twinkle var(--duration) ease-in-out var(--delay) infinite;
+}
+
+.star-background i.still {
+  animation: none;
+}
+
+@keyframes twinkle {
+  50% { opacity: 0.9; }
+}
+
+body.home {
+  justify-content: center;
+}
+
+header {
+  display: grid;
+  height: 7rem;
+  place-items: center;
+}
+
+header img {
+  display: block;
+  width: auto;
+  max-width: calc(100vw - 2rem);
+  height: 5.5rem;
+  object-fit: contain;
+}
+
+main {
+  width: min(100% - 2rem, 75rem);
+  margin-inline: auto;
+  padding-bottom: 4rem;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.25em;
+}
+
+a,
+button {
+  cursor: var(--cursor), pointer;
+}
+
+a:hover {
+  opacity: 0.72;
+}
+
+:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 4px;
+}
+
+#geo-container {
+  width: min(23rem, calc(100vw - 2rem));
+  aspect-ratio: 1;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #bebebe;
+  background: #000;
+  box-shadow: 0 0 1.25rem #5d5d5d;
+}
+
+#geo-container canvas,
+#geo-container svg {
+  display: block;
+}
+
+.home-copy {
+  width: fit-content;
+  margin: 1.5rem auto 0;
+}
+
+.home-copy p {
+  margin: 0 0 1.25rem;
+}
+
+.home-copy nav {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.asterisks {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  letter-spacing: 0.08em;
+}
+
+.narrow {
+  width: 100%;
+  padding-inline: 20px;
+  margin: 1rem auto 0;
+}
+
+h1,
+h2 {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+h1 {
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--foreground);
+  font-size: clamp(1.3rem, 3vw, 2.025rem);
+}
+
+h2 {
+  font-size: clamp(1.3rem, 3vw, 2.025rem);
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-list {
+  margin: 3rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.project-list article {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  padding: 15px;
+  margin: 0 auto 25px;
+}
+
+.gallery button {
+  width: 100%;
+  max-width: 220px;
+  justify-self: center;
+  box-shadow: 0 0 20px rgb(255 255 255 / 10%);
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--foreground);
+  background: #090909;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.gallery button:hover img {
+  opacity: 0.8;
+  transform: scale(1.015);
+}
+
+.prose {
+  width: 100%;
+}
+
+.prose p {
+  margin: 0 0 1.25rem;
+}
+
+.project-links {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.wip {
+  min-height: 50vh;
+  padding-top: 8vh;
+}
+
+dialog {
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgb(0 0 0 / 92%);
+}
+
+dialog[open] {
+  display: grid;
+  place-items: center;
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 92%);
+}
+
+dialog img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  border: 3px solid var(--foreground);
+  box-shadow: 0 0 50px rgb(255 255 255 / 20%);
+  object-fit: contain;
+}
+
+.dialog-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--foreground);
+  color: var(--foreground);
+  background: #000;
+  font: inherit;
+  font-size: 2rem;
+}
+
+@media (max-width: 42rem) {
+  header {
+    height: 5rem;
+  }
+
+  header img {
+    height: 3rem;
+  }
+
+  .narrow {
+    padding-inline: 0;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

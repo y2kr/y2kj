@@ -1,0 +1,23 @@
+---
+import Dodecahedron from '../components/Dodecahedron.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout description="Joseph Holman — Applied AI, ML Systems, Automation">
+  <Dodecahedron />
+
+  <section class="home-copy">
+    <p class="asterisks" aria-hidden="true">***** ***** ***** *****</p>
+    <div>
+      <p>֍ <em>Applied AI, ML Systems, Automation</em></p>
+      <p><strong>Contact:</strong><br /><a href="mailto:josepholman2k@tuta.com">josepholman2k@tuta.com</a></p>
+      <nav aria-label="Portfolio">
+        <a href={`${base}projects/`}>&gt; Projects</a>
+        <a href={`${base}files/other/jh_CV_070826.pdf`}>&gt; CV</a>
+        <a href={`${base}photos/`}>&gt; Photography — WIP</a>
+      </nav>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,69 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const base = import.meta.env.BASE_URL;
+const asset = (path: string) => `${base}${path}`;
+---
+
+<BaseLayout title={project.data.title} description={project.data.summary}>
+  <article class="case-study narrow">
+    <h1>{project.data.title}</h1>
+
+    <div class="gallery">
+      {project.data.images.map((image, index) => (
+        <button type="button" data-gallery-image data-full={asset(image.src)} aria-label={`Open image ${index + 1}: ${image.alt}`}>
+          <img src={asset(image.src)} alt={image.alt} loading={index > 1 ? 'lazy' : 'eager'} />
+        </button>
+      ))}
+    </div>
+
+    <div class="prose"><Content /></div>
+
+    <p class="project-links">
+      {project.data.repository && <a href={project.data.repository} target="_blank" rel="noopener noreferrer">View project on GitHub</a>}
+      {project.data.document && <a href={asset(project.data.document)} target="_blank" rel="noopener noreferrer">Read the dissertation</a>}
+    </p>
+
+    <a class="back-link" href={`${base}projects/`}>&gt; Back to projects</a>
+  </article>
+
+  <dialog id="image-dialog">
+    <button class="dialog-close" type="button" aria-label="Close image">×</button>
+    <img alt="" />
+  </dialog>
+
+  <script>
+    const dialog = document.querySelector<HTMLDialogElement>('#image-dialog');
+    const dialogImage = dialog?.querySelector('img');
+
+    document.querySelectorAll<HTMLButtonElement>('[data-gallery-image]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!dialog || !dialogImage) return;
+        const thumbnail = button.querySelector('img');
+        dialogImage.src = button.dataset.full ?? '';
+        dialogImage.alt = thumbnail?.alt ?? '';
+        dialog.showModal();
+      });
+    });
+
+    dialog?.querySelector<HTMLButtonElement>('.dialog-close')?.addEventListener('click', () => dialog.close());
+    dialog?.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  </script>
+</BaseLayout>

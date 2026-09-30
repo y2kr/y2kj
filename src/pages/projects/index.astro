@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const projects = await getCollection('projects');
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Projects" description="Selected projects">
+  <section class="narrow">
+    <h1>Projects</h1>
+    <div class="project-list">
+      {projects.map((project) => (
+        <article>
+          <h2><a href={`${base}projects/${project.id}/`}>{project.data.title}</a></h2>
+          <p>{project.data.summary}</p>
+        </article>
+      ))}
+    </div>
+    <a class="back-link" href={base}>&gt; Back to home</a>
+  </section>
+</BaseLayout>
