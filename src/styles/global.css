@@ -22,7 +22,7 @@ body {
   min-width: 280px;
   min-height: 100vh;
   margin: 0;
-  padding-top: 2rem;
+  padding-top: 3rem;
   color: var(--foreground);
   background: transparent;
   font-size: 1rem;
@@ -58,21 +58,17 @@ body {
   50% { opacity: 0.9; }
 }
 
-body.home {
-  justify-content: center;
-}
-
 header {
   display: grid;
-  height: 7rem;
-  place-items: center;
+  height: 7.5rem;
+  place-items: start center;
 }
 
 header img {
   display: block;
   width: auto;
   max-width: calc(100vw - 2rem);
-  height: 5.5rem;
+  height: 9.5rem;
   object-fit: contain;
 }
 

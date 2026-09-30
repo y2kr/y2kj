@@ -139,6 +139,7 @@ try {
   const headingFont = await page.locator('h1').evaluate((heading) => getComputedStyle(heading).fontFamily);
   assert(headingFont.includes('Courier New'), `unexpected heading font: ${headingFont}`);
   assert.equal(await page.getByText('Selected work', { exact: true }).count(), 0);
+  assert((await page.locator('.project-list h2').first().textContent()).includes('2026'));
   assert(await page.locator('.project-list article').evaluateAll((articles) =>
     articles.every((article) => article.querySelectorAll(':scope > p').length === 1
       && article.querySelectorAll(':scope > a').length === 0)

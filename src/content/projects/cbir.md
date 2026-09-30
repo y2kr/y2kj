@@ -1,6 +1,7 @@
 ---
-title: Content-Based Image Retrieval System <2022-23>
+title: Content-Based Image Retrieval System <2023>
 summary: Three approaches to finding visually similar images, from hand-crafted features to deep learning.
+date: 2023-01-01
 images:
   - src: files/imgs/cbir/cbir1.jpg
     alt: CBIR query and retrieval interface
