@@ -4,7 +4,7 @@ import { chromium } from 'playwright';
 import { PNG } from 'pngjs';
 
 const port = 4175;
-const url = `http://127.0.0.1:${port}/y2kj/`;
+const url = `http://127.0.0.1:${port}/`;
 const server = spawn('npm', ['run', 'preview', '--', '--host', '127.0.0.1', '--port', String(port)], {
   stdio: 'ignore',
 });
